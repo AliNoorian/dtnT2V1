@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit page</title>
+</head>
+<body>
+<form method="post" th:action="@{/edit}" th:object="${user}">
+    <label>
+        <input type="text" name="name" placeholder="First name" th:field="*{name}">
+    </label>
+    <hr>
+    <label>
+        <input type="text" name="family" placeholder="Last Name" th:field="*{family}">
+    </label>
+    <hr>
+    <label>
+        <input type="number" name="phone" placeholder="Phone number" th:field="*{phone}">
+    </label>
+    <hr>
+    <label>
+        <input type="email" name="email" placeholder="Email" th:field="*{email}">
+    </label>
+    <p th:if="${emailStatus == 'duplicate'}">Duplicate mail</p>
+    <hr>
+    <label>
+        <input type="password" name="password" placeholder="Password" th:field="*{password}">
+    </label>
+    <hr>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

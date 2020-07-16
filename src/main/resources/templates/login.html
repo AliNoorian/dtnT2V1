@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    <form method="post" th:action="@{/login}">
+        <label>
+            <input type="email" placeholder="Email" name="email">
+        </label>
+        <p th:if="${email == 'not found'}">We don't have user with this email</p>
+        <hr>
+        <label>
+            <input type="password" placeholder="Password" name="password">
+        </label>
+        <p th:if="${password == 'false'}">Wrong Password</p>
+        <button type="submit">Sign in</button>
+    </form>
+</body>
+</html>
